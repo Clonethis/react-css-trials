@@ -1,10 +1,13 @@
 /* universal selector for loading all elements same*/
-* {
+/* selecting also ::after because they are not counded with * elements */
+*,
+*::after,
+*::before {
   /* we want to specify our own styling for own elements */
   margin: 0;
   padding: 0;
   /* Include padding and border in the element's total width and height: */
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 /* @media screen and (max-width: 718px) {
   .heading-primary-main {
@@ -21,13 +24,17 @@
   --font-Family: "Lato", sans-serif;
   --button-color: "";
   --primary-color: "";
-  --body-padding: 0px;
+  --body-padding: 2rem;
+  /* this also set default 'rem' value to 10px */
+  /* so i could use everywhere in document rem value and it changes when i change default font-size */
+  font-size: 62.5%;
 }
 body {
   font-family: var(--font-Family);
   font-weight: 400;
-  font-size: 16px;
+  /* font-size: 16px; */
   line-height: 1.4;
+  box-sizing: border-box;
   color: #777;
   padding: var(--body-padding);
 }
@@ -54,44 +61,45 @@ body {
   */
   /* or use clippy.com -> get shape from preset layouts */
   /* clip-path: polygon(0 0, 100% 50%, 0 100%); */
-  clip-path: polygon(0 0, 100% 0, 100% 80vh, 20% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 4rem 100%, 0 100%);
 }
-.logo-box {
+.header__logo-box {
   position: absolute;
-  left: 40px;
-  top: 40px;
+  left: 4rem;
+  top: 4rem;
 }
-.logo {
+.header__logo {
   width: 40vh;
 }
 .heading-primary {
   color: aliceblue;
   text-transform: uppercase;
+  text-align: center;
 }
-.heading-primary-main {
+.heading-primary--main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 800;
   margin-bottom: -16px;
   letter-spacing: 10px;
   animation-name: moveInLeft;
   animation-duration: 1s;
 }
-.heading-primary-secondary {
+.heading-primary--secondary {
   /* for removing some artefacts
      backface-visibility: hidden; */
   display: block;
   font-weight: 400;
   color: rgb(233, 227, 227);
-  font-size: 25px;
+  font-size: 2.3rem;
 
-  letter-spacing: 7.3px;
+  letter-spacing: 0.6rem;
   animation-name: moveInRight;
   animation-duration: 1s;
   margin-bottom: 60px;
   /* animation-timing-function: ease-out; */
 }
-.center-text-box {
+.header__text-box {
   position: absolute;
   /* position begining of element in center || parent element */
 
@@ -134,6 +142,7 @@ body {
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
+  font-size: 1.5rem;
   text-decoration: none;
   /* sets inner sizes of background */
   padding: 14px 40px;
@@ -146,7 +155,7 @@ body {
   /* for setting up ::after element */
   position: relative;
 }
-.btn-animated {
+.btn--animated {
   /* when delay btn is loaded before and shows before animation */
   animation: btnLoadAnimationFromBottom 1.3s 0.4s;
   /* makes shure that btn isn't visible before animation begin */
@@ -176,7 +185,7 @@ body {
   transform: translateY(-3px);
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
 }
-.btn-main-white {
+.btn--main-white {
   color: rgb(67, 65, 64);
   background-color: beige;
   /* border: 6px solid transparent; */
@@ -200,7 +209,7 @@ body {
   z-index: -1;
   transition: all 0.2s;
 }
-.btn-main-white::after {
+.btn--main-white::after {
   background-color: beige;
 }
 

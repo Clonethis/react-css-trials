@@ -1,0 +1,13 @@
+Comments are unavailable
+scripts{
+
+
+this is for compiling sass to style.css
+
+"compile:sass": "node-sass src/sass/main.scss src/styling/css/style.css",
+
+
+this is for automatic watching of scss file for update
+    "sass:watch": "npm run compile:sass && node-sass src/sass/main.scss -wo src/styling/css/style.css"
+
+}
