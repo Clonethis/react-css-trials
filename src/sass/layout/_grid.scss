@@ -1,0 +1,58 @@
+// .grid-system {
+// }
+.row {
+  //because rem == 10px
+  // border: red 2px solid;
+  // border: 0.1px solid rgba(255, 255, 255, 0);
+  max-width: $grid-width;
+  background-color: #777;
+  //   sets content into center of page
+  margin: 0 auto;
+  // min-height: 2rem;
+  // &::after {
+  //   content: "";
+  //   clear: both;
+  //   display: table;
+  // }
+
+  //   margin-bottom: $grid-space-between-rows;
+
+  &:not(:last-child) {
+    margin-bottom: $grid-space-between-rows;
+  }
+
+  [class^="col-"] {
+    margin-bottom: 20px;
+    border: darkviolet 1px solid;
+  }
+  .col-1-2 {
+    // for using variables in css fct. need no prefix '#' and put in in {}
+    //   float: left;
+    //
+    width: calc((100% - #{$grid-space-between-items}) / 2);
+    background-color: coral;
+
+    float: left;
+    //   margin-right: $grid-space-between-items;
+    //   items try to be on left side
+    &:not(:last-child) {
+      margin-right: $grid-space-between-items;
+    }
+  }
+  .col-1-3 {
+    width: calc((100% - 2 * #{$grid-space-between-items}) / 3);
+    float: left;
+    &:not(:last-child) {
+      margin-right: $grid-space-between-items;
+    }
+  }
+
+  @include clearfix;
+}
+
+// .col {
+//   margin: 0 auto;
+// }
+// [class^="col-"] {
+//   margin: 12px;
+// }

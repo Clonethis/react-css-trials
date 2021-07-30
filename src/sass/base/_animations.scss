@@ -1,1 +1,41 @@
-""  _base.scss _typography.scss _utilities.scss
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-100px, 40px) rotate(15deg);
+  }
+  65% {
+    transform: translate(10px, -2px) rotate(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0.1;
+    transform: translate(100px, 40px);
+  }
+  69% {
+    opacity: 0.4;
+    transform: translate(-10px, 6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes btnLoadAnimationFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  90% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

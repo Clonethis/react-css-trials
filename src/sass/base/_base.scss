@@ -1,1 +1,43 @@
-"" 
+@import "../abstracts/variables";
+/* universal selector for loading all elements same*/
+/* selecting also ::after because they are not counded with * elements */
+*,
+*::after,
+*::before {
+  /* we want to specify our own styling for own elements */
+  margin: 0;
+  padding: 0;
+  /* Include padding and border in the element's total width and height: */
+  box-sizing: inherit;
+}
+/* @media screen and (max-width: 718px) {
+  .heading-primary-main {
+    font-size: 40px;
+    letter-spacing: 0px;
+  }
+  .heading-primary-secondary {
+    font-size: 20px;
+    background-color: aqua;
+  }
+} */
+
+:root {
+  //   --animationTime: 1.3s;
+  //   --font-Family: "Lato", sans-serif;
+  //   --button-color: "";
+  //   --primary-color: "";
+  //   --body-padding: 2rem;
+  /* this also set default 'rem' value to 10px */
+  /* so i could use everywhere in document rem value and it changes when i change default font-size */
+  font-size: 62.5%;
+}
+body {
+  // arial family helvetica
+  font-family: $font-family;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.4;
+  box-sizing: border-box;
+  color: $black;
+  padding: $body-padding;
+}

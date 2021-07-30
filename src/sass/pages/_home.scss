@@ -1,0 +1,146 @@
+.header {
+  height: 95vh;
+
+  /* background-image with ',' specify more than one background */
+  /* linear-gradient makes color change from former to latter -> directions are first argument */
+  background-image: linear-gradient(
+      to left bottom,
+      rgba($secondary-color, 0.57),
+      rgba(247, 250, 59, 0.789)
+    ),
+    url("../images/cricket.jpg");
+  /* background: tomato; */
+  /* always try to suit the viewport */
+  background-size: cover;
+  position: relative;
+
+  background-position: top;
+  /* for creating desired shape
+      -starts from left-top corner to right-top...
+      -polygon(x y,x y....)
+    */
+  /* or use clippy.com -> get shape from preset layouts */
+  /* clip-path: polygon(0 0, 100% 50%, 0 100%); */
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 4rem 100%, 0 100%);
+  // syntax for header__logo-box
+  &__logo-box {
+    position: absolute;
+    left: 4rem;
+    top: 4rem;
+  }
+  &__logo {
+    width: 40vh;
+  }
+  &__text-box {
+    position: absolute;
+    /* position begining of element in center || parent element */
+
+    top: 53%;
+    left: 50%;
+    /* this will position element right into center -> NEEDS COMMA BETWEEN VALUES*/
+    transform: translate(-50%, -50%);
+
+    /* Sets text/content in center of div */
+    text-align: center;
+  }
+}
+// .header__logo-box {
+// }
+// .header__logo {
+
+.heading-primary {
+  color: $white;
+  text-transform: uppercase;
+  text-align: center;
+
+  &--main {
+    display: block;
+    font-size: 6.5rem;
+    font-weight: 800;
+    margin-bottom: -16px;
+    letter-spacing: 10px;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+  }
+
+  &--secondary {
+    /* for removing some artefacts
+       backface-visibility: hidden; */
+    display: block;
+    font-weight: 400;
+    color: $font-color-sec-heading;
+    font-size: 2.3rem;
+
+    letter-spacing: 0.6rem;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    margin-bottom: 60px;
+    /* animation-timing-function: ease-out; */
+  }
+}
+.btn {
+  /* pseudo classes ( like event in js ) -> those are 'something:link' for example  */
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-decoration: none;
+    /* sets inner sizes of background */
+    padding: 14px 40px;
+    /* sets non inteference with previous elements ( move away from overlapping elemen) */
+    display: inline-block;
+    /* on action/hover -> this will set default time and what to animate (all)  */
+    /* must be on initial state */
+    transition: all 0.2s;
+    box-shadow: 0px 3px 10px rgba($black, 0.2);
+    /* for setting up ::after element */
+    position: relative;
+  }
+  &--animated {
+    /* when delay btn is loaded before and shows before animation */
+    animation: btnLoadAnimationFromBottom 1.3s 0.4s;
+    /* makes shure that btn isn't visible before animation begin */
+    animation-fill-mode: backwards;
+  }
+  &:hover {
+    /* moves item up */
+    transform: translateY(-6px);
+    /* box-shadow: x y blur color; */
+    box-shadow: 0px 9px 20px rgba($black, 0.3);
+    &::after {
+      transform: scaleX(1.8) scaleY(2.1);
+      opacity: 0;
+    }
+  }
+  &:active {
+    /* it doesnt inherit from hover state -> JUST FROM PARENT ELEMENT -> in this case .btn/.btn:link */
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 12px rgba($black, 0.25);
+  }
+  &--main-white {
+    color: rgb(67, 65, 64);
+    background-color: beige;
+    /* border: 6px solid transparent; */
+    border-radius: 28px;
+    &::after {
+      background-color: beige;
+    }
+    /* font-size: 30px; */
+  }
+  /* this will setup after clicking on button / child of btn element */
+  &::after {
+    /* content and display must be set up otherwise it won't show on page */
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    /* due to showing inside button i must set up pos.absolute to set this behind parent button */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* puts ::after element behind parent element */
+    z-index: -1;
+    transition: all 0.2s;
+  }
+}
