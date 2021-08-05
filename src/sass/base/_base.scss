@@ -22,6 +22,7 @@
 } */
 
 :root {
+  scroll-behavior: smooth;
   //   --animationTime: 1.3s;
   //   --font-Family: "Lato", sans-serif;
   //   --button-color: "";
@@ -40,4 +41,5 @@ body {
   box-sizing: border-box;
   color: $black;
   padding: $body-padding;
+  background-color: $white;
 }

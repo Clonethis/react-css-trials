@@ -1,0 +1,35 @@
+.feature-box {
+  background-color: rgba(126, 126, 126, 0.604);
+  border-radius: $card-border-radius;
+  margin: 0.5rem;
+  display: block;
+  color: $white;
+  box-shadow: 9px 0px 15px rgba(197, 196, 196, 0.289);
+  text-align: center;
+  transition: all 0.15s;
+  padding: 3rem 0.5rem;
+  &__icon {
+    display: inline-block;
+    background-image: linear-gradient(45deg, $converse-color, $white);
+    // M: important so it shows the color it should, not default color
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    font-size: $icon-size;
+    // margin-top: 5rem;
+    padding-top: 1rem;
+  }
+  &__text {
+    margin: 3rem 1rem;
+    font-size: 1.5rem;
+  }
+  &:hover {
+    display: relative;
+    scale: 1.05;
+    top: 1rem;
+    right: 0.4rem;
+    z-index: 1;
+    box-shadow: rgba(121, 120, 120, 0.693);
+  }
+}

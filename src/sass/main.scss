@@ -1,6 +1,7 @@
 // @import "base/index";
 // @import "abstracts/index";
 // @import "pages/index";
+@import "base/utilities";
 @import "abstracts/variables";
 @import "abstracts/mixins";
 @import "base/animations";
@@ -8,8 +9,11 @@
 @import "base/utilities";
 @import "pages/home";
 @import "layout/grid";
-
-// @use "base/typography";
+@import "components/buttons";
+@import "components/composition";
+@import "base/typography";
+@import "components/feature-box";
+@import "components/flipping-card";
 // @use "base/utilities";
 // @use "abstracts/functions";
 // @use "abstracts/mixins";

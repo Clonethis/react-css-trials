@@ -1,0 +1,39 @@
+.heading-secondary {
+  font-size: $font-medium-secondary;
+  text-transform: uppercase;
+  font-weight: 700;
+  //so that color only occupies the text
+  display: inline-block;
+
+  background-image: linear-gradient(
+    to right,
+    rgb(213, 109, 12),
+    rgb(255, 0, 0)
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.2s;
+  text-shadow: $basic-shadow-plain;
+  &:hover {
+    //scaling is growing item larger or smaller
+    transform: translateY(-2px) scale(1.01);
+    text-shadow: $basic-shadow;
+  }
+}
+.heading-tertiary {
+  font-size: $font-tertiary;
+  font-weight: 700;
+  text-transform: uppercase;
+  // margin-bottom: 1rem;
+  // text-align: center;
+}
+.paragraph {
+  // text-align: center;
+  font-weight: 300;
+  font-size: 1.6rem;
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}

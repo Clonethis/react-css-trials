@@ -1,58 +1,100 @@
 // .grid-system {
 // }
 .row {
+  // TODO solve content overlaping in .section-content Row is on top of everything and cuts out enlargened pictures
+  // TODO make row that works like row not with spacer because overflow auto adds scrollbar to things
   //because rem == 10px
-  // border: red 2px solid;
-  // border: 0.1px solid rgba(255, 255, 255, 0);
   max-width: $grid-width;
-  background-color: #777;
+  // clear: both;
+  // overflow: auto;
+  // background-color: black;
+
+  ::after {
+    content: "";
+    clear: both;
+    display: block;
+  }
   //   sets content into center of page
-  margin: 0 auto;
-  // min-height: 2rem;
-  // &::after {
-  //   content: "";
-  //   clear: both;
-  //   display: table;
-  // }
-
-  //   margin-bottom: $grid-space-between-rows;
-
+  // margin: 0 auto;
+  margin: auto;
   &:not(:last-child) {
     margin-bottom: $grid-space-between-rows;
   }
+  // height: 0.01px;
 
+  // take every element that begins with 'col-'
   [class^="col-"] {
     margin-bottom: 20px;
-    border: darkviolet 1px solid;
+    // border: darkviolet 1px solid;
   }
   .col-1-2 {
     // for using variables in css fct. need no prefix '#' and put in in {}
     //   float: left;
     //
     width: calc((100% - #{$grid-space-between-items}) / 2);
-    background-color: coral;
+    //background-color: coral;
 
     float: left;
+
     //   margin-right: $grid-space-between-items;
     //   items try to be on left side
     &:not(:last-child) {
       margin-right: $grid-space-between-items;
     }
   }
+
+  // @include clearfix;
+
   .col-1-3 {
     width: calc((100% - 2 * #{$grid-space-between-items}) / 3);
+    float: left;
+    //background-color: green;
+    &:not(:last-child) {
+      margin-right: $grid-space-between-items;
+    }
+  }
+  .col-2-3 {
+    width: calc(
+      ((100% - #{$grid-space-between-items}) / 3) * 2 +
+        (#{$grid-space-between-items} / 3)
+    );
+    //background-color: blue;
+    float: left;
+  }
+
+  .col-1-4 {
+    // background-color: greenyellow;
+    width: calc((100% - (3 * #{$grid-space-between-items})) / 4);
     float: left;
     &:not(:last-child) {
       margin-right: $grid-space-between-items;
     }
   }
+  .col-2-4 {
+    width: calc((100% - #{$grid-space-between-items}) / 2);
+    //background-color: coral;
 
-  @include clearfix;
+    float: left;
+
+    //   margin-right: $grid-space-between-items;
+    //   items try to be on left side
+    &:not(:last-child) {
+      margin-right: $grid-space-between-items;
+    }
+  }
+  .col-3-4 {
+    width: calc(
+      ((100% - #{$grid-space-between-items}) / 4 * 3) + #{$grid-space-between-items} /
+        2
+    );
+    //background-color: coral;
+
+    float: left;
+
+    //   margin-right: $grid-space-between-items;
+    //   items try to be on left side
+    &:not(:last-child) {
+      margin-right: $grid-space-between-items;
+    }
+  }
 }
-
-// .col {
-//   margin: 0 auto;
-// }
-// [class^="col-"] {
-//   margin: 12px;
-// }

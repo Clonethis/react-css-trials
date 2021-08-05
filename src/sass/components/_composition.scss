@@ -1,0 +1,59 @@
+// .composition__element {
+//   background-color: #777;
+//   height: 200px;
+// }
+// .composition__photo--p1 {
+// }
+// .composition__photo--p2 {
+// }
+// .composition__photo--p3 {
+// }
+
+.composition {
+  //this sets start point for composition__element
+  position: relative;
+  //   this will offset border that is on the OUTLINE
+
+  transition: all 0.3s;
+  //   TODO after I will have just plain photos that I could create in iPad
+  &__photo {
+    outline-offset: 1.5rem;
+    transition: all 0.3s;
+    height: 25rem;
+    // display: inline-block;
+    position: absolute;
+
+    &--p3 {
+      //   position: relative;
+      right: 40%;
+      top: 5rem;
+    }
+    &--p2 {
+      //   position: relative;
+      left: 10%;
+      top: 5rem;
+    }
+    &--p1 {
+      //   position: relative;
+      right: 30%;
+      top: -1rem;
+      transform: rotate(12deg);
+      z-index: 0;
+    }
+
+    &:hover {
+      //sets border
+
+      outline: 1rem solid $converse-color;
+      transform: scale(1.06);
+      z-index: 1;
+    }
+
+    // box-shadow: 0 15px 20px black;
+  }
+
+  //   makes other pictures shrink
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.9);
+  }
+}

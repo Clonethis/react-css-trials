@@ -1,15 +1,29 @@
 //COLORS
 
 $secondary-color: rgb(255, 15, 15);
-$net: #777;
+$converse-color: rgb(220, 16, 16);
+$converse-color-hover: rgb(126, 5, 5);
+$converse-color-active: rgb(169, 2, 61);
+$net: rgb(228, 221, 221);
 $font-family: "Lato", sans-serif;
 $font-color-heading: rgb(245, 238, 248);
 $font-color-sec-heading: rgb(211, 212, 212);
 $body-padding: 2rem;
 $white: rgb(242, 240, 240);
 $black: rgb(14, 14, 14);
-
+$basic-shadow: 0px 9px 20px rgba($black, 0.3);
+$basic-shadow-plain: 0px 8px 10px rgba($black, 0.15);
 //GRID
 $grid-width: 114rem;
-$grid-space-between-rows: 20rem;
+$grid-space-between-rows: 6rem;
 $grid-space-between-items: 4rem;
+//FONT-SIZES
+$font-medium-secondary: 4rem;
+$font-tertiary: 2rem;
+$font-large: 8rem;
+$font-normal-text: 1.6rem;
+$icon-size: 6rem;
+// MARGIN
+$margin-between-section: 6rem;
+//RADIUS
+$card-border-radius: 0.5rem;

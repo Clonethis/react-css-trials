@@ -78,69 +78,37 @@
     /* animation-timing-function: ease-out; */
   }
 }
-.btn {
-  /* pseudo classes ( like event in js ) -> those are 'something:link' for example  */
-  &:link,
-  &:visited {
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    text-decoration: none;
-    /* sets inner sizes of background */
-    padding: 14px 40px;
-    /* sets non inteference with previous elements ( move away from overlapping elemen) */
-    display: inline-block;
-    /* on action/hover -> this will set default time and what to animate (all)  */
-    /* must be on initial state */
-    transition: all 0.2s;
-    box-shadow: 0px 3px 10px rgba($black, 0.2);
-    /* for setting up ::after element */
-    position: relative;
+.section-about {
+  padding: 18rem 0 9rem 0;
+  margin-top: -20vh;
+  // margin-left: 30vh;
+  min-height: 35rem;
+  display: block;
+}
+.section-content {
+  transform: skewY(-5deg);
+  & > * {
+    transform: skewY(5deg);
   }
-  &--animated {
-    /* when delay btn is loaded before and shows before animation */
-    animation: btnLoadAnimationFromBottom 1.3s 0.4s;
-    /* makes shure that btn isn't visible before animation begin */
-    animation-fill-mode: backwards;
-  }
-  &:hover {
-    /* moves item up */
-    transform: translateY(-6px);
-    /* box-shadow: x y blur color; */
-    box-shadow: 0px 9px 20px rgba($black, 0.3);
-    &::after {
-      transform: scaleX(1.8) scaleY(2.1);
-      opacity: 0;
-    }
-  }
-  &:active {
-    /* it doesnt inherit from hover state -> JUST FROM PARENT ELEMENT -> in this case .btn/.btn:link */
-    transform: translateY(-3px);
-    box-shadow: 0px 4px 12px rgba($black, 0.25);
-  }
-  &--main-white {
-    color: rgb(67, 65, 64);
-    background-color: beige;
-    /* border: 6px solid transparent; */
-    border-radius: 28px;
-    &::after {
-      background-color: beige;
-    }
-    /* font-size: 30px; */
-  }
-  /* this will setup after clicking on button / child of btn element */
-  &::after {
-    /* content and display must be set up otherwise it won't show on page */
-    content: "";
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    border-radius: 100px;
-    /* due to showing inside button i must set up pos.absolute to set this behind parent button */
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* puts ::after element behind parent element */
-    z-index: -1;
-    transition: all 0.2s;
-  }
+  border-radius: 2rem;
+  background-clip: polygon();
+  // margin: 10rem 0;
+  background-image: linear-gradient(
+    to right,
+    $white,
+    rgba(224, 47, 145, 0.912),
+    $secondary-color
+  );
+  z-index: -1;
+  padding: 15rem 2rem;
+  // transform: skewY(-4rem);
+  // direct child of feature box -> means row
+  // & > * {
+  // transform: skewY(-5rem);
+  // }
+}
+.section-cards {
+  // background-color: black;
+  padding: 25rem 0 50rem 0;
+  background-image: linear-gradient();
 }
